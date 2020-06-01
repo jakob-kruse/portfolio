@@ -1,0 +1,43 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
+}
+
+.body {
+    -ms-overflow-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+    font-style: normal;
+    line-height: 1.2;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    color: white;
+}
+
+p, span {
+    font-family: "Open Sans", sans-serif;
+    color: white;
+}
+
+a:link:not(#exclude), a:visited:not(#exclude) {
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}
