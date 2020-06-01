@@ -1,27 +1,25 @@
 <script>
+    import Portfolio from '../components/Icons/portfolio.svelte';
+
+    let hovering = -1;
+
     const projects = [
         {
-            name: "Placeholder",
-            icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fstarbucks-coffee-logo-black-and-white.png&f=1&nofb=1',
-            href: ''
-        }, {
-            name: "Placeholder",
-            icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fstarbucks-coffee-logo-black-and-white.png&f=1&nofb=1',
-            href: ''
-        }, {
-            name: "Placeholder",
-            icon: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fstarbucks-coffee-logo-black-and-white.png&f=1&nofb=1',
-            href: ''
-        },
+            name: "Portfolio",
+            icon: Portfolio,
+            href: 'https://github.com/jakob-kruse/portfolio'
+        }
     ]
+
 </script>
 
 <div class="projects-container">
     {#if projects.length > 0}
-        {#each projects as project}
-            <a href="{project.href || '#'}">
-                <div class="projects-container__item">
-                    <img src="{project.icon}" alt="{project.name}" class="projects-container__item__icon">
+        {#each projects as project, index}
+            <a target="_blank" rel="noopener noreferrer" href="{project.href || '#'}">
+                <div class="projects-container__item" on:mouseenter="{() => hovering = index}"
+                     on:mouseleave="{() => hovering = -1}">
+                    <svelte:component this={project.icon} color={hovering === index ? 'white' : 'black'}/>
                     <span class="projects-container__item__name">{ project.name }</span>
                 </div>
             </a>
@@ -69,16 +67,6 @@
 
     .projects-container__item:hover > .projects-container__item__name {
         color: white
-    }
-
-    .projects-container__item:hover > .projects-container__item__icon {
-        color: white;
-        padding: 0px;
-    }
-
-    .projects-container__item__icon {
-        transition: padding .5s;
-        padding: 5px;
     }
 
     .projects-container__item__name {

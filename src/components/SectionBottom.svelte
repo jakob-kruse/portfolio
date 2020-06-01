@@ -37,7 +37,7 @@
 
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 8fr;
+        grid-template-rows: min-content max-content;
         grid-column-gap: 100px;
         grid-template-areas: "about-tite projects-title" "about-content projects-content";
     }
@@ -80,25 +80,25 @@
     }
 
 
-
     @media screen and (max-width: 1264px) {
         .section--bottom {
             padding: 48px;
 
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr auto 1fr auto;
+            grid-template-rows: min-content max-content min-content max-content;
             grid-column-gap: 100px;
             grid-template-areas: none;
         }
 
         .section--bottom__about-title > h1 {
-            font-size: 48px;
+            font-size: 42px;
+            text-align: center;
         }
 
         .section--bottom {
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr auto 1fr auto;
+            grid-template-rows: min-content max-content min-content max-content
         }
 
         .section--bottom__about-title {
@@ -124,7 +124,7 @@
         }
 
         .section--bottom__projects-title > h1 {
-            font-size: 48px;
+            font-size: 42px;
             text-align: center;
             color: #AAAAAA;
         }
