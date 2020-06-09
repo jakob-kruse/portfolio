@@ -8,7 +8,7 @@
 
         ackeeTracker.create({
             server: 'https://ackee.lastdigitsofpi.dev',
-            domainId: '5eea4c0f-e468-47eb-8b18-c3ec9f292bc4'
+            domainId: '813c633b-cd8b-4b28-8e26-e73d16afab2d'
         }).record()
     });
 
